@@ -1,6 +1,8 @@
-let JSName = prompt('What is the “official” name of JavaScript?', '');
-if(JSName == 'ECMAScript') {
-    alert('True');
-} else {
-    alert('You don`t know? ECMAScript!')
-}
+let age;
+//в діапазоні
+if(age >= 14 && age <= 90);
+//не в діапазоні
+if(age < 14 || age > 90);
+
+if(!(age >=14 && age <=90));
+
