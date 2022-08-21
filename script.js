@@ -1,34 +1,48 @@
-//вивести парні числа
-for(let i = 2; i <= 10; i++) {
-    if( i % 2 == 0){
-        alert(i);
-    } 
-}
-// //замінити for на while
-for (let i = 0; i < 3; i++) {
-    alert( `число ${i}!` );
+//переписати за допомогою if-else
+switch (browser) {
+    case 'Edge':
+      alert( "You've got the Edge!" );
+      break;
+  
+    case 'Chrome':
+    case 'Firefox':
+    case 'Safari':
+    case 'Opera':
+      alert( 'Ми підтримуємо і ці браузери' );
+      break;
+  
+    default:
+      alert( 'Маємо надію, що ця сторінка виглядає добре!' );
   }
 
-let i = 0;
-while( i < 3 ) {
-    alert( `число ${i}!` );
-    i++;
+  if (browser == 'Edge') {
+    alert( "You've got the Edge!" );
+  } else if(browser == 'Chrome' || browser == 'Firefox' || browser == 'Safari' ||browser == 'Opera') {
+    alert( 'Ми підтримуємо і ці браузери' );
+  } else {
+    alert( 'Маємо надію, що ця сторінка виглядає добре!' );
+  }
+
+  //переписати в switch
+let a = +prompt('a?', '');
+
+if (a == 0) {
+  alert( 0 );
 }
-//повторити цикл, поки не буде числа більше 100
-let num = 0;
-while( num < 100 || num ==='' || num === null){ 
-    num = prompt('input number > 100', 0);
+if (a == 1) {
+  alert( 1 );
 }
 
-//вивести прості числа
-let n = prompt('input num', 0);
-label:
-for(let i = 2; i <= n; i++) {
-    for (let j = 2; j < i; j++) {
-        if(i % j == 0){
-            continue label;
-        } 
-    }
-    alert(i);
+if (a == 2 || a == 3) {
+  alert( '2,3' );
 }
 
+switch(a) {
+    case 0: alert(0);
+        break;
+    case 1: alert(1);
+        break;
+    case 2:
+    case 3: alert( '2,3' );
+    break;
+}
