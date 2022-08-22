@@ -1,33 +1,29 @@
-// function checkAge(age) {
-//   if (age > 18) {
-//     return true;
-//   } else {
-//     return confirm('Батьки дозволили?');
-//   }
-// }
+function checkAge(age) {
+  if (age > 18) {
+    return true;
+  } else {
+    return confirm('Батьки дозволили?');
+  }
+}
 
-// function checkAge(age) {
-//   return (age > 18) || confirm('Батьки дозволили?')
-// }
+function checkAge(age) {
+  return (age > 18) || confirm('Батьки дозволили?')
+}
 
-// function checkAge(age) {
-//  return (age > 18) ? true : confirm('Батьки дозволили?')
-// }
+function checkAge(age) {
+ return (age > 18) ? true : confirm('Батьки дозволили?')
+}
 
 // //функція порівняння
-// function min( a, b ) {
-//   return a > b ? a : b
-// }
+function min( a, b ) {
+  return a > b ? a : b
+}
 
-// min(2, 5) == 2
-// min(3, -1) == -1
-// min(1, 1) == 1
+min(2, 5) == 2
+min(3, -1) == -1
+min(1, 1) == 1
 
 //функція pow()
-// pow(3, 2) = 3 * 3 = 9
-// pow(3, 3) = 3 * 3 * 3 = 27
-// pow(1, 100) = 1 * 1 * ...* 1 = 1
-
 function pow(x, n) {
   let res;
   for ( let i = 0 ; i < n; i++) {
