@@ -1,48 +1,43 @@
-//переписати за допомогою if-else
-switch (browser) {
-    case 'Edge':
-      alert( "You've got the Edge!" );
-      break;
-  
-    case 'Chrome':
-    case 'Firefox':
-    case 'Safari':
-    case 'Opera':
-      alert( 'Ми підтримуємо і ці браузери' );
-      break;
-  
-    default:
-      alert( 'Маємо надію, що ця сторінка виглядає добре!' );
+// function checkAge(age) {
+//   if (age > 18) {
+//     return true;
+//   } else {
+//     return confirm('Батьки дозволили?');
+//   }
+// }
+
+// function checkAge(age) {
+//   return (age > 18) || confirm('Батьки дозволили?')
+// }
+
+// function checkAge(age) {
+//  return (age > 18) ? true : confirm('Батьки дозволили?')
+// }
+
+// //функція порівняння
+// function min( a, b ) {
+//   return a > b ? a : b
+// }
+
+// min(2, 5) == 2
+// min(3, -1) == -1
+// min(1, 1) == 1
+
+//функція pow()
+// pow(3, 2) = 3 * 3 = 9
+// pow(3, 3) = 3 * 3 * 3 = 27
+// pow(1, 100) = 1 * 1 * ...* 1 = 1
+
+function pow(x, n) {
+  let res;
+  for ( let i = 0 ; i < n; i++) {
+    res *= x;
   }
-
-  if (browser == 'Edge') {
-    alert( "You've got the Edge!" );
-  } else if(browser == 'Chrome' || browser == 'Firefox' || browser == 'Safari' ||browser == 'Opera') {
-    alert( 'Ми підтримуємо і ці браузери' );
-  } else {
-    alert( 'Маємо надію, що ця сторінка виглядає добре!' );
-  }
-
-  //переписати в switch
-let a = +prompt('a?', '');
-
-if (a == 0) {
-  alert( 0 );
+  return res
 }
-if (a == 1) {
-  alert( 1 );
-}
+let x = prompt('input x', 0);
+let n = prompt('input n', 0);
 
-if (a == 2 || a == 3) {
-  alert( '2,3' );
-}
-
-switch(a) {
-    case 0: alert(0);
-        break;
-    case 1: alert(1);
-        break;
-    case 2:
-    case 3: alert( '2,3' );
-    break;
-}
+if(n < 1) {
+  alert('input num>1')
+} else alert( pow(x,n) )
