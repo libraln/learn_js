@@ -1,40 +1,31 @@
-function ucFirst(name) {
-  let res = name[0].toUpperCase() + name.slice(1);
-  console.log(res); 
-  return res;
+let styles = ["Jazz", "Blues"];
+console.log(styles);
+styles.push("Rock-n-Roll");
+console.log();
+console.log(styles);
+styles[Math.floor((styles.length -1)  /2) ] = "Classics";
+console.log(styles);
+styles.shift()
+console.log(styles);
+styles.unshift("Rap", "Reggae");
+console.log(styles);
+
+function sumInput() {
+    let num = 0;
+    let arr = [];
+    while(num!=='' && num!==null && !isNaN(num)) {
+       num = prompt('input number', 0);
+       arr.push(+num);
+    } 
+    let sum = 0;
+    for(let i=0; i<arr.length; i++) {
+        sum +=arr[i];
+    }
+    console.log(arr.length);
+    console.log(sum);
+    return sum;
 }
-ucFirst("василь");
+sumInput();
 
-//
 
-function checkSpam(str) {
-  let strLowerCase = str.toLowerCase();
-  if(strLowerCase.includes('viagra') || strLowerCase.includes('xxx')) {
-    return true;
-  }
-  return false;
-}
 
-console.log(checkSpam('buy ViAgRA now'));
-console.log(checkSpam('free xxxxx'));
-console.log(checkSpam("innocent rabbit"));
-
-//
-
-function truncate(str, maxlength) {
-  if (str.length <= maxlength){
-    return str;
-  }
-  let slicedStr = str.slice(0, maxlength - 1) + '...';
-  return slicedStr;
-}
-console.log(truncate("Що я хотів би розповісти на цю тему:", 20)); 
-console.log(truncate("Всім привіт!", 20));
-
-//
-function extractCurrencyValue(str) {
-  let money = +str.slice(1);
-  return money;
-}
-
-console.log(extractCurrencyValue('$120'));
