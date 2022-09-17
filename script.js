@@ -1,26 +1,30 @@
-function sumSalaries(salaries) {
-  const salaryArr =  Object.values(salaries);
-  let sum = 0;
-  for (let salary of salaryArr) {
-    sum += salary;
-  }
-  return sum;
-}
+let user = {
+    name: "Іван",
+    years: 30
+  };
+
+let { name, years: age, isAdmin = false } = user;
+alert( name ); // Іван
+alert( age ); // 30
+alert( isAdmin ); // false
 
 let salaries = {
     "Іван": 100,
     "Петро": 300,
     "Марія": 250
   };
-  
-  alert( sumSalaries(salaries) ); // 650
+  console.log(topSalary(salaries));
 
-  function count(obj) {
-    return Object.keys(obj).length;
+  function topSalary(salaries) {
+    let maxSalary = 0;
+    let maxName = null;
+   let arr = Object.entries(salaries);
+   for (let employee of arr) {
+    let [name, salary] = employee;
+    if (maxSalary < salary) {
+        maxSalary = salary;
+        maxName = name;
+    }
+   }
+   return maxName;
   }
-  let user = {
-    name: 'Іван',
-    age: 30
-  };
-  
-  alert( count(user) ); // 2
