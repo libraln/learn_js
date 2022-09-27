@@ -1,33 +1,28 @@
-let user = {
-    name: "Іван Іванов",
-    age: 35
-  };
-  let userJson = JSON.stringify(user);
-  console.log(userJson);
-  console.log(JSON.parse(userJson));
-
-  let room = {
-    number: 23
-  };
-  
-  let meetup = {
-    title: "Конференція",
-    occupiedBy: [{name: "Іван"}, {name: "Аліса"}],
-    place: room
-  };
-  
-  // циклічне посилання
-  room.occupiedBy = meetup;
-  meetup.self = meetup;
-  
-  alert( JSON.stringify(meetup, function replacer(key, value) {
-    return (key != "" && value == meetup) ? undefined : value;
-  }));
-  
-  /* результат повинен бути:
-  {
-    "title":"Конференція",
-    "occupiedBy":[{"name":"Іван"},{"name":"Аліса"}],
-    "place":{"number":23}
+function sumTo(num) {
+  if(num == 1) {
+    return 1;
+  } else {
+    return num + sumTo(num - 1);
   }
-  */
+}
+
+let res = sumTo(100);
+console.log(res);
+
+function factorial(n) {
+  if(n==1) return 1;
+  return n * factorial(n - 1);
+}
+console.log(factorial(5));
+
+function fib(n) {
+  if( n <= 1 ) {
+    return n;
+  } else {
+   return fib(n-1) + fib(n-2)
+  }
+}
+
+
+alert(fib(3)); // 2
+alert(fib(7)); // 13
