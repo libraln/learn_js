@@ -1,28 +1,25 @@
-function sumTo(num) {
-  if(num == 1) {
-    return 1;
-  } else {
-    return num + sumTo(num - 1);
+function sum(a) {
+  return function(b) {
+    let sum = a+b;
+    return sum;
+  }
+}
+console.log(sum(2)(3));
+
+//task 2
+
+let arr = [1, 2, 3, 4, 5, 6, 7];
+function inBetween(a, b) {
+  return function(el) {
+    return el >= a && b >= el 
   }
 }
 
-let res = sumTo(100);
-console.log(res);
-
-function factorial(n) {
-  if(n==1) return 1;
-  return n * factorial(n - 1);
-}
-console.log(factorial(5));
-
-function fib(n) {
-  if( n <= 1 ) {
-    return n;
-  } else {
-   return fib(n-1) + fib(n-2)
+function inArray(arr) {
+  return function(el) {
+    return arr.includes(el);
   }
 }
+console.log( arr.filter(inArray([1, 2, 10])) ); // 1,2
+console.log( arr.filter(inBetween(3, 6)) ); // 3,4,5,6
 
-
-alert(fib(3)); // 2
-alert(fib(7)); // 13
