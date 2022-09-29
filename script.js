@@ -1,25 +1,14 @@
-function sum(a) {
-  return function(b) {
-    let sum = a+b;
-    return sum;
-  }
+function makeCounter() {
+  let count = 0;
+  function counter() {
+    return count++;
+  };
+
+  counter.set = value => count = value;
+  counter.decrease = () => count--;
+  
+  return counter;
 }
-console.log(sum(2)(3));
-
-//task 2
-
-let arr = [1, 2, 3, 4, 5, 6, 7];
-function inBetween(a, b) {
-  return function(el) {
-    return el >= a && b >= el 
-  }
-}
-
-function inArray(arr) {
-  return function(el) {
-    return arr.includes(el);
-  }
-}
-console.log( arr.filter(inArray([1, 2, 10])) ); // 1,2
-console.log( arr.filter(inBetween(3, 6)) ); // 3,4,5,6
-
+let counter = makeCounter();
+console.log(counter.set(18));
+console.log(counter.decrease());
