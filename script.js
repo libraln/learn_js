@@ -1,14 +1,23 @@
-function makeCounter() {
-  let count = 0;
-  function counter() {
-    return count++;
-  };
-
-  counter.set = value => count = value;
-  counter.decrease = () => count--;
-  
-  return counter;
+function printNumbers(from, to) {
+  let i = from;
+  let intervalId = setInterval( function() {
+    alert(i);
+    if( i== to ) {
+      clearInterval(intervalId);
+    }
+  i++ }, 1000);
 }
-let counter = makeCounter();
-console.log(counter.set(18));
-console.log(counter.decrease());
+
+printNumbers(1,10);
+
+function printNums( from, to ) {
+  let i = from;
+  let timerId = setTimeout( function go() {
+    alert(i);
+    if( i < to ) {
+      setTimeout( go, 1000 )
+    }
+    i++;
+  }, 1000)
+}
+printNums(5,10);
